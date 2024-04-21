@@ -1,0 +1,135 @@
+//   .table-container {
+//     position: relative;
+//     overflow-x: auto;
+//   }
+
+//   .table-container::before {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     height: 100%;
+//     width: 100px;
+//     background-color: white;
+//     z-index: 1;
+//   }
+
+//   .table-container table {
+//     position: relative;
+//     z-index: 2;
+//   }
+
+
+  .fixed-column {
+    position: sticky;
+    left: 0;
+    background-color: #fff;
+    z-index: 1;
+  }
+  .mat-table {
+    width: 210%;
+    // height: calc(100vh - 32px);
+    overflow: auto;
+    // max-height: 500px;
+  }
+  .right-text
+  {
+    padding-left: 1%;
+  }
+
+
+.table-row
+{
+  overflow-x: scroll;
+}
+
+/* Add sticky behavior to the specified columns */
+.sticky-column {
+  position: sticky;
+  left: 0;
+  z-index: 1; /* To ensure sticky columns overlay non-sticky columns */
+  background-color: #f0f0f0; /* Optional background color for sticky columns */
+  width: 160px;
+}
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+.mat-form-field,div,.mat-option,.mat-fab,.mat-button,button,.mat-menu-item,p {
+  font-family: 'Inter', sans-serif;
+}
+
+
+.material-icons {
+  font-family: 'Material Icons', sans-serif;
+}
+#downbtn
+{
+  float: right;
+}
+#searchbtns
+{
+  margin-left: 90%;
+}
+
+.smallinput{
+  width: 120px;
+ 
+}
+
+.spacingForm {
+  margin-left: 30px; 
+  // margin-left: 104%;
+  // margin-top: -2%;
+}
+
+.maindiv
+{
+    margin:2%;
+}
+
+
+.cus-taskPageBtnsDiv {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 10px 20px 40px 20px;
+}
+
+.cus-taskPageBtnsDiv button {
+  background-color: #044063;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 6px 4px;
+  border-radius: 4px;
+}
+
+.cus-taskBtnDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.pointer {cursor: pointer;}
+
+.cus-btnActive {
+  background-color: #ededff;
+}
+
+
+.cus-pageNumbers p {
+  width: 40px;
+  height: 37px;
+  padding: 8px 16px 8px 16px;
+  border-radius: 5px;
+  margin-bottom: 0;
+}
+
+
+

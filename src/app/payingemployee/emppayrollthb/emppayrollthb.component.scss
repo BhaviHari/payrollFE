@@ -1,0 +1,175 @@
+
+.name{
+    font-size: 30px;
+    padding-left: 26px;
+}
+.body{
+    background-color: white;
+}
+.skyblue{
+    background-color:white;
+}
+.row{
+  width: 98% !important;
+}
+.perwidth{
+    width:30%;
+    border-right-color: rgb(77, 77, 77);
+    border-top-color: rgb(77, 77, 77);
+    border-bottom-color: rgb(77, 77, 77);
+    outline: none;
+    padding-right:2px;
+    background-color: white;
+}
+.perwidthBack{
+    width:30%;
+    border-left-color: rgb(77, 77, 77);
+    border-top-color: rgb(77, 77, 77);
+    border-bottom-color: rgb(77, 77, 77);
+    outline: none;
+    padding-right: 0;
+    background-color: white;
+}
+.Prepend{
+    border-left-color: rgb(77, 77, 77);
+    border-top-color: rgb(77, 77, 77);
+    border-bottom-color: rgb(77, 77, 77);
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    
+}
+
+.Grade{
+  margin-left: 15px;
+}
+.Append{
+    border-right-color: rgb(77, 77, 77);
+    border-top-color: rgb(77, 77, 77);
+    border-bottom-color: rgb(77, 77, 77);
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+   
+}
+.alignValue{
+    text-align: right;
+}
+.height{
+    height: 50px;
+}
+
+// .mt-5{
+//     margin-top: 0rem !important;
+// }
+.Segment{
+    font-weight: bold;
+    cursor: pointer;
+}
+.Segment_value{
+    border-radius: 10px;
+}
+// *{
+//     font-family: 'Poppins', sans-serif;
+//     font-weight: 300;
+// }
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: red;
+  }
+  .violet{
+    color:blueviolet;
+  }
+// .form-control{
+//     transition: none;
+//     background-clip: none;
+//     outline: none;
+// }
+.Employeespan{
+    border: 1px solid black;
+    border-radius: 4px;
+    height: 40px;
+    background-color:white;
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+    padding: 0;
+}
+.perc{
+    border-left-color: #e9ecef;
+    background-color: #e9ecef;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+#previewTable,
+#ths,
+#tds {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+.Rupee .mat-mdc-form-field-icon-prefix{
+  width: 20% !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rupeeColor{
+  color: red;
+  background-color: green;
+}
+@media print {
+    body {
+      margin: 0;
+      
+    }
+  
+    .page {
+      margin: 0;
+      box-shadow: none;
+    }
+  
+    header {
+      text-align: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ccc;
+    }
+  
+    main {
+      margin-top: 20px;
+    }
+  }
+
+
+
+  // * {
+  //   font-family: "Inter", sans-serif;
+  // }
+  // .fonts
+  // {
+  //   font-family: "Inter", sans-serif !important;
+  // }
+  // mat-radio-group mat-radio-button.fonts {
+  //   font-family: "Inter", sans-serif !important;
+  // }
+  .smallinput{
+    width: 120px;
+   
+  }
+
+  
+  .spacingForm {
+    margin-left: 30px; 
+
+  }
+
+  .custom-background .mat-form-field-outline {
+    background: #C7C8CC;
+}
+
+::ng-deep .custom-mat-form-field .mat-form-field-outline {
+  background: #EEEDEB;
+}
+.ButtonClass{
+  margin-bottom: 40px;
+  margin-left: -15px;
+}
+
