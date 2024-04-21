@@ -6,6 +6,7 @@ import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { LoginLogoComponent } from './login-logo/login-logo.component';
+import { CanActivateGuardService } from './can-activate-guard.service';
 // import { LoginLogoComponent} from './login-logo/login-logo.component';
 // import { ListViewComponent} from './list-view/list-view.component'
 // import { SummaryListComponent } from './ememo/mastersummary/summary-list.component';
@@ -42,7 +43,7 @@ const routes: Routes = [
   // { path: 'listview', component: ListViewComponent},
   // {path:'utilities/mobileupdate',component:UtilitiesComponent,canActivate:[CanActivateGuardService]},
   // { path: 'contact', component: ContactComponent, canActivate:[CanActivateGuardService] },
-  // { path: 'about', component: AboutComponent, canActivate:[CanActivateGuardService] },
+  { path: 'about', component: AboutComponent, canActivate:[CanActivateGuardService] },
   // { path: 'project', component: ProjectComponent, canActivate:[CanActivateGuardService] },
   // { path: 'createAccount', component: CreateAccountComponent, canActivate:[CanActivateGuardService]},
   // { path: 'employeeSummary', component: EmployeeSummaryComponent, canActivate:[CanActivateGuardService]},

@@ -148,7 +148,7 @@ export class AppComponent implements OnInit {
           console.log("countdown", localStorage.getItem("sessionData"))
         } else {
           this.dataService.getRefresh()
-            .subscribe(result => {
+            .subscribe((result: any) => {
               console.log("countdown1", localStorage.getItem("sessionData"))
               console.log("countdown1", countdown)
               console.log("Refresh", result)
@@ -182,7 +182,7 @@ export class AppComponent implements OnInit {
 
 
     // this.sharedService.isSideNav = false;
-    this.sharedService.ionName.subscribe(data => {
+    this.sharedService.ionName.subscribe((data: any) => {
       this.ionName = data;
       this.isIonName = this.ionName === '' ? false : true;
     });
@@ -296,7 +296,7 @@ export class AppComponent implements OnInit {
         }
       }, 500);
       this.dataService.mobiledatapost(this.mobileupdationform.value)
-        .subscribe((results) => {
+        .subscribe((results: any) => {
           let datas = results;
           if (results.id) {
             this.otpflag = true;
@@ -386,7 +386,7 @@ export class AppComponent implements OnInit {
   continue() {
     this.showModal = false;
     this.dataService.getRefresh()
-      .subscribe(result => {
+      .subscribe((result: any) => {
         this.reset();
       })
   }
@@ -646,10 +646,10 @@ export class AppComponent implements OnInit {
       this.router.navigate(['payingemployee/paymasters']);
       // return true;
     }
-    if (modrow.url === "/taskmanagement") {
-      this.router.navigate(['taskmanage/task_manage_summary']);
+    // if (modrow.url === "/taskmanagement") {
+      // this.router.navigate(['taskmanage/task_manage_summary']);
       // return true;
-    }
+    // }
     return true;
     // if (modrow.url === "/hrms/empdetails") {
     //   this.router.navigate(['/hrms/empdetails']);
@@ -1073,7 +1073,7 @@ export class AppComponent implements OnInit {
     this.formGroupDirective.resetForm();
     this.closeentityreload.nativeElement.click();
     this.dataService.getEntityReload_update(this.entityReloadId)
-      .subscribe((result) => {
+      .subscribe((result: any) => {
         console.log(result)
         if (result.status == "success") {
           this.notification.showSuccess("Updated Successfully")
@@ -1168,7 +1168,7 @@ login_codepwd: any;
       this.login_codepwd = this.logindatas.code;
       this.changepwd.value.code = this.login_codepwd;
       this.dataService.getchange_pwd(this.changepwd.value)
-        .subscribe((result) => {
+        .subscribe((result: any) => {
           console.log(result)
       if (result.status == "success") {
       this.notification.showSuccess("Password Changed")
@@ -1181,9 +1181,9 @@ login_codepwd: any;
         }
         }
         ,
-        error => {
-          this.SpinnerService.hide();
-        }
+        // error => {
+        //   this.SpinnerService.hide();
+        // }
         )
     }
 

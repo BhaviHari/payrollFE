@@ -202,10 +202,10 @@ export class AboutComponent implements OnInit {
           if (modrow === "/employeepayroll") {
             this.router.navigate(['payingemployee/empdetailsummary'])
           }
-          if (modrow === "/taskmanagement") {
-            this.router.navigate(['taskmanage/task_manage_summary']);
+          // if (modrow === "/taskmanagement") {
+            // this.router.navigate(['taskmanage/task_manage_summary']);
             // return true;
-          }
+          // }
 
           this.openNav();
         }

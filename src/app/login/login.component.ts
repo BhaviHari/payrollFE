@@ -5,8 +5,10 @@ import { DataService } from '../service/data.service'
 import { Observable } from 'rxjs';
 import { SharedService } from '../service/shared.service';
 import { NgxSpinnerService } from 'ngx-spinner'
+import { MaterialModule } from '../material/material.module';
 import { NotificationService } from '../service/notification.service'
 // import { analyzeAndValidateNgModules } from '@angular/compiler';
+// import { environment } from 'src/environments/environment';
 import { environment } from '../../environments/environment';
 import { data } from 'jquery';
 import { CookieService } from 'ngx-cookie-service';
@@ -18,17 +20,17 @@ import { CookieService } from 'ngx-cookie-service';
 export class LoginComponent implements OnInit {
 
   redirect_tO_NAC = environment.redirect_TO_NAC
-  loginForm!: FormGroup;
+  loginForm: FormGroup | any;
   errormsg: any;
-  returnUrl!: string;
+  returnUrl: string | any;
   mail_flag: any;
   otp_flag = false;
   mobile_flag = false;
   count = 100;
   timeout: any;
-  mobile_form!: FormGroup;
+  mobile_form: FormGroup | any;
   ips: any;
-  otp2!: boolean;
+  otp2: boolean | any;
   session_data: any;
   mobile_num: any;
   entityID: any;
@@ -84,8 +86,8 @@ export class LoginComponent implements OnInit {
       this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/about';
       const item = localStorage.getItem("sessionData");
       this.route.queryParams
-        .subscribe(params => {
-          this.mail_flag = params['from'];
+        .subscribe((params:any) => {
+          this.mail_flag = params.from;
         }
         );
       if (item !== null && item !== "") {
@@ -146,21 +148,21 @@ export class LoginComponent implements OnInit {
        
         if(datas.code == 403 && datas.description == "Invalid user account" ){
           this.notification.showWarning("No User Found, Invalid Credentials")
-          return false 
+          // return false 
       }
-        if (datas.id) {
+        else if (datas.id) {
           this.dataService.Finduserlocation(datas.token, datas.id)
             .then(data => {
               if (data.status == false) {
                 this.mobile_flag = true;
-                this.mobile_form!.get('mobile_number')!.setValue(data.mobile_number);
+                this.mobile_form.get('mobile_number').setValue(data.mobile_number);
                 this.mobile_num = data.mobile_number
                 this.mobile_num = 'XXXXXX' + this.mobile_num.toString()
-                this.mobile_form!.get('mobile_num')!.setValue(this.mobile_num);
+                this.mobile_form.get('mobile_num').setValue(this.mobile_num);
                 this.gen_otp()
                 localStorage.setItem("location", JSON.stringify(this.mobile_flag))
                 this.sharedService.loginEmpId = datas.employee_id;
-                return true;
+                // return true;
               }
               else if (data.user_id) {
                 this.mobile_flag = false;
@@ -175,12 +177,11 @@ export class LoginComponent implements OnInit {
                 this.sharedService.get_userlocation.next(this.mobile_flag)
 
                 this.router.navigateByUrl(this.returnUrl, { skipLocationChange: true });
-                return true;
+                // return true;
               }
+              // return true
               // this.SpinnerService.hide();
-              return true;
             })
-            return true;
         }
         else if (datas.user_id) {
           this.mobile_flag = false;
@@ -195,17 +196,16 @@ export class LoginComponent implements OnInit {
           this.sharedService.loginEmpId = datas.employee_id;
           this.sharedService.get_userlocation.next(this.mobile_flag)
           this.router.navigateByUrl(this.returnUrl, { skipLocationChange: false });
-          return true;
+          // return true;
         }
         console.log("my-key", this.cookieService.get("my-key"));
-        return true;
       }
       )
-      return true;
+      return true
   }
 
   gen_otp() {
-    this.mobile_form!.get('otp')!.setValue('');
+    this.mobile_form.get('otp').setValue('');
     this.count = 35;
     let mob = this.mobile_form.value.mobile_number
     this.timeout = setInterval(() => {
@@ -259,7 +259,7 @@ export class LoginComponent implements OnInit {
           this.sharedService.get_userlocation.next(this.mobile_flag)
           this.getMenuUrl();
           this.router.navigateByUrl(this.returnUrl, { skipLocationChange: true });
-          // return true;
+          return true;
         }
         else {
           if (data['validation_status'].Description) {
@@ -271,6 +271,7 @@ export class LoginComponent implements OnInit {
           localStorage.removeItem("sessionData");
           this.sharedService.isLoggedin = false;
         }
+        return true
       })
   }
 
