@@ -6,8 +6,9 @@
           <form [formGroup]="yearlyForm" class="formposition">
             <div class="row col-md-12">
               <div class="col-md-3" *ngIf="adminUser">
-                <mat-label>Employee Name<label style="color:red">*</label> </mat-label><br>
+            
                 <mat-form-field (click)="functionalHead()" style="margin-top: -3%;" class="width">
+                  <mat-label>Employee Name<label style="color:red">*</label> </mat-label>
                   <input #fnInput matInput formControlName="emplName" placeholder="Select Employee"
                     [matAutocomplete]="fn" (keyup)="empsearchbyname()">
                   <mat-icon matSuffix class="maticonsize">unfold_more</mat-icon>
@@ -26,8 +27,9 @@
                 </mat-form-field>
               </div>
               <div class="col-md-3">
-                <mat-label>Year</mat-label><br>
                 <mat-form-field class="width">
+                <mat-label>Year</mat-label>
+
                   <mat-select matInput formControlName="year" placeholder="Year" [(ngModel)]="currenYear">
                     <mat-option *ngFor="let year of years" [value]="year">
                       {{ year }}
